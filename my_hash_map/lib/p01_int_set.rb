@@ -106,11 +106,6 @@ class ResizingIntSet
   end
 
   def resize!
-      # add same amt of buckets
-    # (num_buckets*2).times do
-    #   @store << Array.new
-    # end
-    #reassign els into new buckets e.g delete and re-insert
     set = @store
     @store = Array.new(num_buckets*2) { Array.new }
     set = set.flatten.compact
