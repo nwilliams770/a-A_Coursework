@@ -110,6 +110,52 @@ def fourth_anagram?(string, target)
   counter.values.all?(&:zero?)
 end
 
-p fourth_anagram?("elvis", "lives")
-p fourth_anagram?("elviss", "elvis")
-p fourth_anagram?("elvis", "elviss")
+def bad_two_sum?(arr, target_sum)
+  i = 0
+  while i < arr.length
+    j = i + 1
+    while j < arr.length - 1
+      return true if arr[i] + arr[j] == target_sum
+      j += 1
+    end
+    i += 1
+  end
+  false
+end
+
+def okay_two_sum(arr, target_sum)
+  original = arr.sort!
+  duplicate = original.dup.map {|el| el - target_sum}
+  j = -1
+  i = 0
+  while i < original.length && j < -(original.length)
+    return true if duplicate[i] + original[j] == 0
+
+    if duplicate[i].abs > original[j].abs
+      i += 1
+    else
+      j -= 1
+    end
+  end
+  false
+end
+
+def good_two_sum(arr, target_sum)
+  sum_counter = Hash.new {|h,k| h[k] = []}
+  arr.each_with_index do |el, idx|
+    sum_counter[el] << idx if sum_counter[el].empty?
+  end
+  arr.each_with_index do |el, idx|
+    sum_counter[target_sum - el] << idx
+  end
+  result = sum_counter.values.map(&:uniq)
+  result.any? { |v| v.length > 1 }
+end
+
+
+arr = [0, 1, 5, 7]
+p okay_two_sum(arr, 6)
+p okay_two_sum(arr, 10)
+
+p good_two_sum(arr, 6)
+p good_two_sum(arr, 10)
