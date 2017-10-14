@@ -4,19 +4,22 @@ end
 
 class Array
   def hash
-    return 675890464890543890 if self.empty?
-    hashy = self.map.with_index {|el, idx| el ** idx }
-    hash_hashy = (hashy.reduce(:*) * 1000000) % 199
-    hash_hashy.to_s.split[0...9].join.to_i
+    # return 675890464890543890 if self.empty?
+    # hashy = self.map.with_index {|el, idx| el * idx }
+    # hash_hashy = (hashy.flatten.compact.reduce(:*) * 1000000) % 199
+    # hash_hashy.to_s.split[0...9].join.to_i
+    self.to_s.chars.reduce(0) {|acc, i| acc.hash + i.ord.hash}.hash
   end
 end
 
 class String
   def hash
-    return 675890464890543892 if self.length < 1
-    hashy = self.chars.map {|el| el.bytes}
-    hash_hashy = (hashy.flatten.reduce(:-) * 156978847) % 199
-    hash_hashy.to_s.split[0...9].join.to_i
+    # return 675890464890543892 if self.length < 1
+    # hashy = self.chars.map {|el| el.bytes}
+    # hash_hashy = (hashy.flatten.compact.reduce(:-) * 156978847) % 199
+    # hash_hashy.to_s.split[0...9].join.to_i
+
+    self.chars.hash
   end
 end
 
@@ -25,7 +28,7 @@ class Hash
   # Make sure to implement an actual Hash#hash method
   def hash
 
-    0
+    self.to_s.chars.sort.hash
   end
 end
 a = [1,2,3,4]
