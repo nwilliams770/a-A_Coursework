@@ -1,0 +1,47 @@
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 25px;
+  padding-bottom: 15px;
+  align-items: center;
+}
+
+.left-nav > ul,
+.right-nav > ul {
+  display: flex;
+}
+
+.left-nav > ul > li {
+  font-family: $sans-serif;
+  font-size: 13px;
+  text-transform: uppercase;
+  position: relative;
+  bottom: 3px;
+}
+
+.right-nav > ul > li {
+  margin: 2px;
+  align-items: center;
+}
+
+.right-nav > ul > li:last-of-type {
+  margin: 8px;
+}
+
+.left-nav > ul > li:hover,
+.right-nav > ul > li:last-of-type:hover {
+  background-color: $lightest-gray;
+}
+
+.left-nav span {
+  margin-right: 25px;
+  margin-left: 5px;
+}
+
+
+.right-nav i {
+  position: relative;
+  font-size: 20px;
+  bottom: 2px;
+  cursor: pointer;
+}
