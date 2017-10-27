@@ -1,6 +1,6 @@
 class CatsController < ApplicationController
   before_action :is_owner?, only: [:edit, :update]
-  
+
   def index
     @cats = Cat.all
     render :index
@@ -28,8 +28,8 @@ class CatsController < ApplicationController
   end
 
   def is_owner?
-    unless @current_user.id == @cat.user_id
-      flash[:error] = "You can only edit cats that belong to you."
+    current_user.id == @cat.user_id
+      # flash[:error] = "You can only edit cats that belong to you."
     end
   end
 
