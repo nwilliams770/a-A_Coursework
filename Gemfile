@@ -37,6 +37,12 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'factory_girl_rails', :require => false
+  gem 'faker'
+  gem 'launchy'
+  gem 'shoulda-matchers'
+  gem 'rspec-rails'
+  gem 'pry-rails'
 end
 
 group :development do
@@ -47,7 +53,6 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'bcrypt'
-  gem 'pry-rails'
   gem 'binding_of_caller'
   gem 'better_errors'
   gem 'annotate'
