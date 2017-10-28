@@ -1,0 +1,16 @@
+// Place all the styles related to the bands controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.band {
+  font-size: 20px;
+  font-family: "Courier New", serif;
+  text-shadow: 3px 3px 0px pink;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+ul {
+  list-style: none;
+}

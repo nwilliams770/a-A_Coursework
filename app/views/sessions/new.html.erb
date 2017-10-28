@@ -1,0 +1,20 @@
+<%= render partial: 'layouts/errors' %>
+
+<h2>Enter Login Credentials Below</h2>
+
+<form action="<%= sessions_url %>" method="post">
+  <%= auth_token %>
+  <div class='inputs'>
+    <label>E-mail: </label>
+    <input type="text"
+    name="user[email]"
+    value ="<%= @user.email if @user %>"> <br>
+
+    <label>Password: </label>
+    <input type="text" name="user[password]">
+    <br>
+
+    <input class="button" type="submit" value="Submit">
+
+  </div>
+</form>

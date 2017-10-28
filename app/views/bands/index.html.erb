@@ -1,0 +1,18 @@
+<p> check out all our sick talent </p>
+
+<div class="band">
+<ul>  <% @bands.each do |band| %>
+
+  <form action="<%= band_url(band) %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <%= auth_token %>
+    <li> <%= band.name %></li>
+    <input class="button" type="submit" value="Delete">
+  </form>
+
+
+
+    <br>
+  <% end %>
+</ul>
+</div>

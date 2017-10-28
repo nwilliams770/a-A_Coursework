@@ -1,0 +1,14 @@
+
+
+<h2>Enter Credentials Below</h2>
+<form action="<%= users_url %>" method="post">
+  <%= auth_token %>
+
+  <div class ="inputs">
+  <label>E-mail: <input type="text" name="user[email]"></label> <br>
+
+  <label>Password: <input type="text" name="user[password]"></label><br>
+
+  <input class="button" type="submit" value="Submit">
+  </div>
+</form>

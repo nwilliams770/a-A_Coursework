@@ -1,0 +1,91 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ h1 {
+   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+   font-size: 36px;
+   text-transform: uppercase;
+   letter-spacing: 3px;
+   margin: 0;
+   padding-bottom: 10px;
+ }
+
+.welcome {
+  font-family: "Courier New", serif;
+  font-size: 15px;
+  letter-spacing: 4px;
+  margin: 0;
+}
+
+h2 {
+  font-family: "Courier New", serif;
+  font-size: 15px;
+  margin: 0;
+  padding-bottom: 5px;
+}
+ p {
+   font-family: "Courier New", serif;
+   font-size: 12px;
+   text-transform: lowercase;
+ }
+
+.page_header {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.header_links {
+  list-style: none;
+  display: flex
+}
+
+.inputs {
+  font-family: "Courier New", serif;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.header_links a {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 10px;
+  text-transform: uppercase;
+  color: black;
+  letter-spacing: 1px;
+  padding-left: 4px;
+  text-decoration: none;
+
+  background-color: ghostwhite;
+  border-radius: 1px;
+}
+
+.header_links a:hover {
+  text-decoration: underline;
+}
+
+.button {
+  background-color: ghostwhite;
+  border: none;
+  font-family: "Courier New", serif;
+  text-transform: uppercase;
+}
+
+.button:hover {
+ border: 1px solid black;
+ background: white;
+}
+
+@import 'bands'

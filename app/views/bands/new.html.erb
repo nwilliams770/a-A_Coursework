@@ -1,0 +1,12 @@
+<p>we heard you and your bros started a new band...add it below for uber pwnage:<p>
+
+  <form action="<%= bands_url %>" method="post">
+    <%= auth_token %>
+
+    <div class ="inputs">
+    <label>Name: <input type="text" name="band[name]"></label>
+    <br>
+    <br>
+
+    <input class="button" type="submit" value="Submit">
+  </form>
