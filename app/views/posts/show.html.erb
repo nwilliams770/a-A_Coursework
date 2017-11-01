@@ -1,0 +1,16 @@
+<h1><%= @post.title %></h1>
+
+<%= link_to 'Add Comment' new_post_comment_url(@post), method: :get %>
+
+
+<% if @post.comments %>
+  <% @post.comments.each do |comment| %>
+    <%= comment.author %> : <%= comment.content %>
+    <% if @parent_comments.include?(comment) %>
+      <%= link_to 'See Comment Thread', comments_url(comment), method: :get %>
+    <% end %>
+
+    <% if comment.child_comments %>
+      
+  <% end %>
+<% end %>
