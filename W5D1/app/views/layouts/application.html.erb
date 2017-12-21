@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MusicApp</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <header class="page_header">
+    <h1> Music App </h1>
+
+    <ul class ="header_links">
+      <% if current_user %>
+        <li><%= link_to 'Logout', sessions_url, method: 'delete' %></li>
+      <% else %>
+        <li><%= link_to 'Login', {controller: 'sessions', action: 'new'} %></li>
+      <% end %>
+      <li>  <%= link_to 'Sign Up', {controller: 'users', action: 'new'} %></li>
+    </ul>
+  </header>
+
+  <% if logged_in? %>
+    <h2 class='welcome'>welcome to Planet Funk, <%= current_user.email %></h2>
+  <% end %>
+
+  <body>
+
+    <%= yield %>
+  </body>
+</html>

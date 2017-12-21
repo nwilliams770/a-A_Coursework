@@ -1,0 +1,16 @@
+<p> looks like we're having a makeover...choose new band name</p>
+
+
+<form action="<%= band_url(@band) %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <%= auth_token %>
+
+  <div class ="inputs">
+  <label>Name:
+  <input type="text" name="band[name]" value="<%= @band.name %>">
+ </label>
+  <br>
+  <br>
+
+  <input class="button" type="submit" value="Submit">
+</form>
