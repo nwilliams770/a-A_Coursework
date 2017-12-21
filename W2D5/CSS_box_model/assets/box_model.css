@@ -1,0 +1,33 @@
+div {
+  height: 10px;
+  width: 200px;
+  padding: 50px;
+  border: 5px solid #000000;
+}
+
+#first-div {
+  background-color: #39cccc;
+}
+
+#second-div {
+  background-color: #ff4136;
+  box-sizing: border-box;
+}
+
+p {
+  background-color: #7fdbff;
+}
+#third-div{
+  background-color: gold;
+  height: auto;
+}
+#image-1-container{
+  height: 600px;
+  background-color: pink;
+}
+#image-2-container{
+  width: auto;
+  height: 600px;
+  background-color: pink;
+  display: inline-block;
+}
